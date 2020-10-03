@@ -32,7 +32,7 @@ var (
 					log.Println(err)
 				}
 
-				err = os.Rename(path, strings.ReplaceAll(path, " ", ""))
+				err = os.Rename(path, strings.ReplaceAll(path, " ", "_"))
 				if err != nil {
 					panic(err)
 				}
