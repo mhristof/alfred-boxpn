@@ -25,8 +25,9 @@ rand: alfred-boxpn
 zip: alfred-boxpn info.plist
 	zip -r alfred-boxpn.alfredworkflow boxpn-openvpn-configs info.plist alfred-boxpn
 
-v%:
-	git tag v$*
+minor:
+	sed -i "" 's/$(shell semver current)/$(shell semver -n | rev | cut -d ' ' -f1 | rev)/' info.plist
+	semver
 	git push --tags
 
 .PHONY:
