@@ -20,7 +20,7 @@ alfred-boxpn: $(shell find ./ -name '*.go')
 	go build $(BUILD_FLAGS) -o alfred-boxpn main.go
 
 zip: alfred-boxpn
-	zip -r alfred-boxpn.alfredworkflow info.plist alfred-boxpn
+	zip -r alfred-boxpn.alfredworkflow boxpn-openvpn-configs info.plist alfred-boxpn
 
 v%:
 	git tag v$*

@@ -8,9 +8,10 @@ import (
 )
 
 var rootCmd = &cobra.Command{
-	Use:   "main",
+	Use:   "alfred-boxpn",
 	Short: "BoxPN",
 	Run: func(cmd *cobra.Command, args []string) {
+
 	},
 }
 

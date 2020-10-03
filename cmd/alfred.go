@@ -1,6 +1,7 @@
 package cmd
 
 import (
+	"fmt"
 	"io/ioutil"
 	"path/filepath"
 
@@ -28,7 +29,7 @@ var (
 					panic(err)
 				}
 
-				item.SetArg("openvpn " + abs)
+				item.SetArg(fmt.Sprintf("openvpn '%s'", abs))
 			}
 
 			creds := opts.Add("creds", "setup creds, required args are 'username password'")
