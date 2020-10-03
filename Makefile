@@ -27,8 +27,21 @@ zip: alfred-boxpn info.plist
 
 minor:
 	sed -i "" 's/$(shell semver current | tr -d 'v' )/$(shell semver -n | rev | cut -d ' ' -f1 | rev | tr -d 'v')/' info.plist
+	make commitVersion
 	semver
 	git push --tags
+
+patch:
+	sed -i "" 's/$(shell semver current | tr -d 'v' )/$(shell semver -p -n | rev | cut -d ' ' -f1 | rev | tr -d 'v')/' info.plist
+	make commitVersion
+	semver
+	git push --tags
+
+.PHONY: commitVersion
+commitVersion:
+	git add info.plist
+	git commit -m 'bumped version' info.plist
+
 
 .PHONY:
 help:           ## Show this help.

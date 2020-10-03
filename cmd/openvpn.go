@@ -34,7 +34,7 @@ var (
 			if err != nil {
 				panic(err)
 			}
-			//defer os.Remove(config.Auth)
+			defer os.Remove(config.Auth)
 			path, err := exec.LookPath("openvpn")
 			if err != nil {
 				panic(err)
