@@ -40,7 +40,7 @@
 				<key>escaping</key>
 				<integer>102</integer>
 				<key>script</key>
-				<string>nohup ./alfred-boxpn {query} &amp;</string>
+                <string>PATH=~/.brew/opt/openvpn/sbin:$PATH nohup ./alfred-boxpn {query} &amp;</string>
 				<key>scriptargtype</key>
 				<integer>0</integer>
 				<key>scriptfile</key>
@@ -127,7 +127,7 @@
 	<key>variables</key>
 	<dict>
 		<key>PATH</key>
-        <string>/usr/bin:/usr/local/opt/openvpn/sbin:~/.brew/opt/openvpn/sbin</string>
+        <string>/usr/bin:/usr/local/opt/openvpn/sbin</string>
 	</dict>
 	<key>variablesdontexport</key>
 	<array/>

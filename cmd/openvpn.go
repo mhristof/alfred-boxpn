@@ -34,13 +34,12 @@ var (
 			if err != nil {
 				panic(err)
 			}
-			defer os.Remove(config.Auth)
 			path, err := exec.LookPath("openvpn")
 			if err != nil {
 				panic(err)
 			}
 
-			sudo.Run(fmt.Sprintf("%s '%s'", path, args[0]))
+			sudo.Run(fmt.Sprintf(`bash -c "%s '%s'; rm auth.txt"`, path, args[0]))
 		},
 	}
 )
