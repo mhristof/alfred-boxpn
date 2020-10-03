@@ -22,7 +22,7 @@ alfred-boxpn: $(shell find ./ -name '*.go')
 rand: alfred-boxpn
 	./alfred-boxpn $(shell ./alfred-boxpn alfred  | jq '.items[].arg' -r | grep openvpn | shuf -n1)
 
-zip: alfred-boxpn
+zip: alfred-boxpn info.plist
 	zip -r alfred-boxpn.alfredworkflow boxpn-openvpn-configs info.plist alfred-boxpn
 
 v%:
