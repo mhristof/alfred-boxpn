@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"io/ioutil"
 	"os"
+	"os/exec"
 
 	"github.com/mhristof/alfred-boxpn/config"
 	"github.com/mhristof/alfred-boxpn/security"
@@ -33,8 +34,13 @@ var (
 			if err != nil {
 				panic(err)
 			}
-			defer os.Remove(config.Auth)
-			sudo.Run("openvpn " + args[0])
+			//defer os.Remove(config.Auth)
+			path, err := exec.LookPath("openvpn")
+			if err != nil {
+				panic(err)
+			}
+
+			sudo.Run(path + " " + args[0])
 		},
 	}
 )

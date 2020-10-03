@@ -1,7 +1,7 @@
 MAKEFLAGS += --warn-undefined-variables
 SHELL := bash
 .SHELLFLAGS := -eu -o pipefail -c
-.DEFAULT_GOAL := help
+.DEFAULT_GOAL := zip
 .ONESHELL:
 
 
@@ -18,6 +18,9 @@ test:	## Run all tests
 
 alfred-boxpn: $(shell find ./ -name '*.go')
 	go build $(BUILD_FLAGS) -o alfred-boxpn main.go
+
+rand: alfred-boxpn
+	./alfred-boxpn $(shell ./alfred-boxpn alfred  | jq '.items[].arg' -r | grep openvpn | shuf -n1)
 
 zip: alfred-boxpn
 	zip -r alfred-boxpn.alfredworkflow boxpn-openvpn-configs info.plist alfred-boxpn

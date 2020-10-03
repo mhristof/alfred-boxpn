@@ -6,6 +6,8 @@
 	<string>https://github.com/mhristof/alfred-boxpn</string>
 	<key>connections</key>
 	<dict>
+		<key>6C2426F0-DBBB-4D8E-8511-251ED422BD40</key>
+		<array/>
 		<key>FBD01B59-817D-4289-92FB-937ABBD14F70</key>
 		<array>
 			<dict>
@@ -38,7 +40,7 @@
 				<key>escaping</key>
 				<integer>102</integer>
 				<key>script</key>
-				<string>./alfred-boxpn {query}</string>
+                <string>nohup ./alfred-boxpn {query} &amp;</string>
 				<key>scriptargtype</key>
 				<integer>0</integer>
 				<key>scriptfile</key>
