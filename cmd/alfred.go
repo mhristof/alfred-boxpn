@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"io/ioutil"
 	"path/filepath"
+	"strings"
 
 	"github.com/mhristof/go-alfred"
 	"github.com/spf13/cobra"
@@ -30,6 +31,7 @@ var (
 				}
 
 				item.SetArg(fmt.Sprintf("openvpn '%s'", path))
+				item.SetMatch(match(file.Name(), "-_."))
 			}
 
 			creds := opts.Add("creds", "setup creds, required args are 'username password'")
@@ -42,6 +44,13 @@ var (
 		},
 	}
 )
+
+func match(haystack, needle string) string {
+	for _, char := range needle {
+		haystack = strings.ReplaceAll(haystack, string(char), " ")
+	}
+	return haystack
+}
 
 func init() {
 	rootCmd.AddCommand(alfredCmd)

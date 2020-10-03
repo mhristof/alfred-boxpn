@@ -40,7 +40,7 @@
 				<key>escaping</key>
 				<integer>102</integer>
 				<key>script</key>
-                <string>nohup ./alfred-boxpn {query} &amp;</string>
+				<string>nohup ./alfred-boxpn {query} &amp;</string>
 				<key>scriptargtype</key>
 				<integer>0</integer>
 				<key>scriptfile</key>
@@ -59,7 +59,7 @@
 			<key>config</key>
 			<dict>
 				<key>alfredfiltersresults</key>
-				<false/>
+				<true/>
 				<key>alfredfiltersresultsmatchmode</key>
 				<integer>0</integer>
 				<key>argumenttreatemptyqueryasnil</key>

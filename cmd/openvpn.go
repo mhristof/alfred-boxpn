@@ -40,7 +40,7 @@ var (
 				panic(err)
 			}
 
-			sudo.Run(path + " " + args[0])
+			sudo.Run(fmt.Sprintf("%s '%s'", path, args[0]))
 		},
 	}
 )

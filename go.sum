@@ -60,6 +60,8 @@ github.com/matttproud/golang_protobuf_extensions v1.0.1/go.mod h1:D8He9yQNgCq6Z5
 github.com/mhristof/germ v1.3.0/go.mod h1:wSRw+qUe8mu/r2o4dg5S9pblyRnL6jiI9FnGqTOrzeQ=
 github.com/mhristof/go-alfred v1.0.2 h1:hJxaHownm3LUZHlgrMaztNG77h12+FKPD/xTf0t2iek=
 github.com/mhristof/go-alfred v1.0.2/go.mod h1:ByrGmCVn/T8bjluBguVlrGt+IaPYXLijn+TAalHujUs=
+github.com/mhristof/go-alfred v1.1.0 h1:lyPijI3M8OA/RrbegxbbIXVv+1d1QZCQfVQG5TXbD9M=
+github.com/mhristof/go-alfred v1.1.0/go.mod h1:ByrGmCVn/T8bjluBguVlrGt+IaPYXLijn+TAalHujUs=
 github.com/mhristof/go-update v0.1.0/go.mod h1:7XKz6UuKW5TlW5brD+JgYz4rhCeJE/OnwdxXGvulOQA=
 github.com/mitchellh/go-homedir v1.1.0/go.mod h1:SfyaCUpYCn1Vlf4IUYiD9fPX4A5wJrkLzIz1N1q0pr0=
 github.com/mitchellh/mapstructure v1.1.2/go.mod h1:FVVH3fgwuzCH5S8UJGiWEs2h04kUh9fWfEaFds41c1Y=
