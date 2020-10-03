@@ -34,7 +34,7 @@ minor:
 patch:
 	sed -i "" 's/$(shell semver current | tr -d 'v' )/$(shell semver -p -n | rev | cut -d ' ' -f1 | rev | tr -d 'v')/' info.plist
 	make commitVersion
-	semver
+	semver --patch
 	git push --tags
 
 .PHONY: commitVersion
