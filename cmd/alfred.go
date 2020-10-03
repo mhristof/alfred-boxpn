@@ -4,7 +4,6 @@ import (
 	"fmt"
 	"io/ioutil"
 	"path/filepath"
-	"strings"
 
 	"github.com/mhristof/go-alfred"
 	"github.com/spf13/cobra"
@@ -25,12 +24,12 @@ var (
 			for _, file := range files {
 
 				item := opts.Add(file.Name(), file.Name())
-				abs, err := filepath.Abs(filepath.Join(configs, file.Name()))
+				path := filepath.Join(configs, file.Name())
 				if err != nil {
 					panic(err)
 				}
 
-				item.SetArg(fmt.Sprintf("openvpn '%s'", strings.ReplaceAll(abs, " ", "\\ ")))
+				item.SetArg(fmt.Sprintf("openvpn '%s'", path))
 			}
 
 			creds := opts.Add("creds", "setup creds, required args are 'username password'")
