@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"io/ioutil"
 	"path/filepath"
+	"strings"
 
 	"github.com/mhristof/go-alfred"
 	"github.com/spf13/cobra"
@@ -29,7 +30,7 @@ var (
 					panic(err)
 				}
 
-				item.SetArg(fmt.Sprintf("openvpn '%s'", abs))
+				item.SetArg(fmt.Sprintf("openvpn '%s'", strings.ReplaceAll(abs, " ", "\\ ")))
 			}
 
 			creds := opts.Add("creds", "setup creds, required args are 'username password'")
