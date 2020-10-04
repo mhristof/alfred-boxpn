@@ -85,7 +85,7 @@
 				<key>runningsubtext</key>
 				<string>Calculating infinity ...</string>
 				<key>script</key>
-				<string>./alfred-boxpn alfred</string>
+				<string>./alfred-boxpn.sh alfred</string>
 				<key>scriptargtype</key>
 				<integer>1</integer>
 				<key>scriptfile</key>
