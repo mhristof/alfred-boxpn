@@ -34,7 +34,7 @@ var (
 				item.SetArg(fmt.Sprintf("openvpn '%s'", path))
 				item.SetMatch(match(file.Name(), "-_."))
 
-				icon := filepath.Join("icons", file.Name()) + ".svg"
+				icon := filepath.Join("icons", file.Name()) + ".png"
 				if _, err := os.Stat(icon); !os.IsNotExist(err) {
 					item.SetIcon(icon)
 				}

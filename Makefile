@@ -9,6 +9,7 @@ SHELL := bash
 GIT_COMMIT ?= $(shell git rev-list -1 HEAD)
 BUILD_FLAGS := \
 	-ldflags "-X github.com/mhristof/alfred-boxpn/cmd.GitCommit=$(GIT_COMMIT)"
+PNG := $(subst svg,png,$(wildcard icons/*))
 
 fast-test:  ## Run fast tests
 	go test ./... -tags fast
@@ -24,6 +25,17 @@ rand: alfred-boxpn
 
 zip: alfred-boxpn info.plist
 	zip -r alfred-boxpn.alfredworkflow boxpn-openvpn-configs info.plist alfred-boxpn alfred-boxpn.sh icons
+
+.PHONY: fix
+fix:  $(PNG)
+	echo '$(PNG)'
+
+%.png:
+	svg2png '$(subst png,svg,$@)' > '$@'
+	rm -rf '$(subst png,svg,$@)'
+
+go-fix:
+	go run main.go fix
 
 minor:
 	sed -i "" 's/$(shell semver current | tr -d 'v' )/$(shell semver -n | rev | cut -d ' ' -f1 | rev | tr -d 'v')/' info.plist
