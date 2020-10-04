@@ -62,8 +62,14 @@ github.com/mhristof/go-alfred v1.0.2 h1:hJxaHownm3LUZHlgrMaztNG77h12+FKPD/xTf0t2
 github.com/mhristof/go-alfred v1.0.2/go.mod h1:ByrGmCVn/T8bjluBguVlrGt+IaPYXLijn+TAalHujUs=
 github.com/mhristof/go-alfred v1.1.0 h1:lyPijI3M8OA/RrbegxbbIXVv+1d1QZCQfVQG5TXbD9M=
 github.com/mhristof/go-alfred v1.1.0/go.mod h1:ByrGmCVn/T8bjluBguVlrGt+IaPYXLijn+TAalHujUs=
+github.com/mhristof/go-alfred v1.2.0 h1:hR7NUiWLsPHKAzRtonOg14xVz4egeieO6DaQ13GT06g=
+github.com/mhristof/go-alfred v1.2.0/go.mod h1:ByrGmCVn/T8bjluBguVlrGt+IaPYXLijn+TAalHujUs=
 github.com/mhristof/go-country v0.0.0-20201004124902-e48983e3661c h1:XwQOAGPDwfkDLq7Tvozor7Rp0Ko4m2ht94kofR/qwM8=
 github.com/mhristof/go-country v0.0.0-20201004124902-e48983e3661c/go.mod h1:a3FQa2zd1by0UTBZt88rw+pvmpTeVkCTmaj7CFqU8EQ=
+github.com/mhristof/go-country v0.2.0 h1:gdIE4x3/cGMFgvFVQUj/LTJnhHkoLx8U5VyH83F4JPc=
+github.com/mhristof/go-country v0.2.0/go.mod h1:a3FQa2zd1by0UTBZt88rw+pvmpTeVkCTmaj7CFqU8EQ=
+github.com/mhristof/go-country v0.3.0 h1:AJQbUGuH9EePU9gENlC3ZOZjS4ejJMR1j5SNgmanFEE=
+github.com/mhristof/go-country v0.3.0/go.mod h1:a3FQa2zd1by0UTBZt88rw+pvmpTeVkCTmaj7CFqU8EQ=
 github.com/mhristof/go-update v0.1.0/go.mod h1:7XKz6UuKW5TlW5brD+JgYz4rhCeJE/OnwdxXGvulOQA=
 github.com/mitchellh/go-homedir v1.1.0/go.mod h1:SfyaCUpYCn1Vlf4IUYiD9fPX4A5wJrkLzIz1N1q0pr0=
 github.com/mitchellh/mapstructure v1.1.2/go.mod h1:FVVH3fgwuzCH5S8UJGiWEs2h04kUh9fWfEaFds41c1Y=

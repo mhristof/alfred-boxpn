@@ -2,8 +2,10 @@ package cmd
 
 import (
 	"fmt"
+	"io"
 	"io/ioutil"
 	"log"
+	"net/http"
 	"os"
 	"path/filepath"
 	"strings"
@@ -38,18 +40,53 @@ var (
 	}
 )
 
+// DownloadFile will download a url to a local file. It's efficient because it will
+// write as it downloads and not load the whole file into memory.
+func DownloadFile(filepath string, url string) error {
+
+	// Get the data
+	resp, err := http.Get(url)
+	if err != nil {
+		return err
+	}
+	defer resp.Body.Close()
+
+	// Create the file
+	out, err := os.Create(filepath)
+	if err != nil {
+		return err
+	}
+	defer out.Close()
+
+	// Write the body to file
+	_, err = io.Copy(out, resp.Body)
+	return err
+}
+
 func flag(file string) {
-	parts := strings.Split(file, "_")
-	name := parts[0]
+	parts := strings.Split(file, "-")
+	name := strings.Trim(strings.ReplaceAll(parts[0], "_", " "), " ")
 
 	fmt.Println(fmt.Sprintf("country: %+v", name))
 
-	c, err := country.FindName(name)
+	c, err := country.FindName(translateName(name))
 	if err != nil {
 		panic(err)
 	}
 
 	fmt.Println(c.Flag)
+	DownloadFile(filepath.Join("icons", file)+".svg", c.Flag)
+}
+
+func translateName(name string) string {
+	switch {
+	case strings.HasPrefix(name, "Korea"):
+		return "Republic of Korea"
+	case strings.HasPrefix(name, "United States"):
+		return "United States of America"
+	}
+
+	return name
 }
 
 func authUserPass(path string) {
