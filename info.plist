@@ -3,7 +3,9 @@
 <plist version="1.0">
 <dict>
 	<key>bundleid</key>
-	<string>https://github.com/mhristof/alfred-boxpn</string>
+	<string>alfred-boxpn</string>
+	<key>category</key>
+	<string>Productivity</string>
 	<key>connections</key>
 	<dict>
 		<key>6C2426F0-DBBB-4D8E-8511-251ED422BD40</key>
@@ -23,13 +25,13 @@
 		</array>
 	</dict>
 	<key>createdby</key>
-	<string></string>
+	<string>Mike Christof</string>
 	<key>description</key>
-	<string></string>
+	<string>Handle boxpn VPN sessions</string>
 	<key>disabled</key>
 	<false/>
 	<key>name</key>
-	<string>vpn</string>
+	<string>boxpn</string>
 	<key>objects</key>
 	<array>
 		<dict>
@@ -40,7 +42,7 @@
 				<key>escaping</key>
 				<integer>102</integer>
 				<key>script</key>
-                <string>PATH=~/.brew/opt/openvpn/sbin:$PATH nohup ./alfred-boxpn.sh {query} &amp;</string>
+				<string>PATH=~/.brew/opt/openvpn/sbin:$PATH ./alfred-boxpn.sh {query} &amp;</string>
 				<key>scriptargtype</key>
 				<integer>0</integer>
 				<key>scriptfile</key>
@@ -81,7 +83,7 @@
 				<key>queuemode</key>
 				<integer>1</integer>
 				<key>runningsubtext</key>
-				<string></string>
+				<string>Calculating infinity ...</string>
 				<key>script</key>
 				<string>./alfred-boxpn alfred</string>
 				<key>scriptargtype</key>
@@ -91,7 +93,7 @@
 				<key>subtext</key>
 				<string></string>
 				<key>title</key>
-				<string>Vpn config</string>
+				<string>Start/stop a BoxPN vpn session</string>
 				<key>type</key>
 				<integer>0</integer>
 				<key>withspace</key>
