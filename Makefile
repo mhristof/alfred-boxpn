@@ -24,7 +24,7 @@ rand: alfred-boxpn
 	./alfred-boxpn $(shell ./alfred-boxpn alfred  | jq '.items[].arg' -r | grep openvpn | shuf -n1)
 
 zip: alfred-boxpn info.plist
-	zip -r alfred-boxpn.alfredworkflow FBD01B59-817D-4289-92FB-937ABBD14F70.png boxpn-openvpn-configs info.plist alfred-boxpn alfred-boxpn.sh icons
+	zip -r alfred-boxpn.alfredworkflow FBD01B59-817D-4289-92FB-937ABBD14F70.png boxpn-openvpn-configs info.plist alfred-boxpn alfred-boxpn.sh icons icon.png
 
 .PHONY: fix
 fix:  $(PNG)
